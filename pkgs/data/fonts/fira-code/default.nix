@@ -10,10 +10,10 @@ in fetchzip {
   # only extract the variable font because everything else is a duplicate
   postFetch = ''
     mkdir -p $out/share/fonts
-    unzip -j $downloadedFile '*-VF.ttf' -d $out/share/fonts/truetype
+    unzip -j $downloadedFile '*[!V][!F].ttf' -d $out/share/fonts/truetype
   '';
 
-  sha256 = "1wbfjgvr9m5azl5w49y0hpqzgcraw6spd1wnxgxlzfx57x6gcw0k";
+  sha256 = "1mghf53yf6i7xn0gr2ixrd6mr7wcjy1y538i1k92c82qs7y2lb8j";
 
   meta = with lib; {
     homepage = "https://github.com/tonsky/FiraCode";
